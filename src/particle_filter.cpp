@@ -32,13 +32,12 @@ using namespace std;
 	// Add random Gaussian noise to each particle.
 void ParticleFilter::init(double x, double y, double theta, double std[]) {
 	static default_random_engine gen;
-    gen.seed(123);//----------------------------------------hier--------------
+    gen.seed(123);
     num_particles = 400; //number of particles: more slows down, less can lead to missing correct particles
 	// Create normal distributions for x, y and theta.
 	normal_distribution<double> dist_x(x, std[0]);
 	normal_distribution<double> dist_y(y, std[1]);
 	normal_distribution<double> dist_theta(theta, std[2]);
-//------------------------------------------------------runter-----------------------
 	particles.resize(num_particles); // Resize the `particles` vector to fit desired number of particles
 	weights.resize(num_particles);
 	double init_weight = 1.0/num_particles;
@@ -94,12 +93,9 @@ void ParticleFilter::prediction(double delta_t, double std_pos[], double velocit
 
 
 
+// void ParticleFilter::dataAssociation(std::vector<LandmarkObs> predicted, std::vector<LandmarkObs>& observations) {
 
-
-void ParticleFilter::dataAssociation(std::vector<LandmarkObs> predicted, std::vector<LandmarkObs>& observations) {
-
-}
-
+//}
 
 
 
@@ -117,7 +113,7 @@ void ParticleFilter::dataAssociation(std::vector<LandmarkObs> predicted, std::ve
 	//   http://planning.cs.uiuc.edu/node99.html
 void ParticleFilter::updateWeights(double sensor_range, double std_landmark[], 
 		std::vector<LandmarkObs> observations, Map map_landmarks) {
-//--------------------------------runter----------------------------------
+
 
 	const double sigma_xx = std_landmark[0]*std_landmark[0];
 	const double sigma_yy = std_landmark[1]*std_landmark[1];
@@ -184,7 +180,7 @@ static default_random_engine gen;
     }
     particles = new_particles;
 }
-//-------------------------------------------ab hier nichts verändert------
+
 Particle ParticleFilter::SetAssociations(Particle particle, std::vector<int> associations, std::vector<double> sense_x, std::vector<double> sense_y)
 {
 	//particle: the particle to assign each listed association, and association's (x,y) world coordinates mapping to
