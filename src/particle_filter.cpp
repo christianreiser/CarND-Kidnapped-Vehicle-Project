@@ -4,9 +4,9 @@
  *  Created on: Dec 12, 2016
  *      Author: Tiffany Huang
  * 
- * ukf.cpp contains code from Udacoty lessons and was also inspired by Nikolay Falaleev
+ * particle filter.cpp contains code from Udacity lessons and was also inspired by Nikolay Falaleev
  * http://udacity.com/drive
- * https://github.com/NikolasEnt/Unscented-Kalman-Filter/blob/master/src/ukf.cpp
+ * https://github.com/NikolasEnt/Unscented-Kalman-Filter/blob/master/src/particle_filter.cpp
  */
 
 #include <random>
